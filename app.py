@@ -71,7 +71,7 @@ def upload():
 
         if float(sorted_val[-1][1]) == 1.0 and float(sorted_val[-2][1]) < 0.1:
             result = f"Result: {sorted_val[-1][0]} "
-        elif 0.5 < float(sorted_val[-1][1]) < 1.0:
+        elif 0.991 < float(sorted_val[-1][1]) < 1.0:
             in2model_img = list()
             for i in range(9):
                 batch = it.next()
