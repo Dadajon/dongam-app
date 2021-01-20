@@ -70,7 +70,7 @@ def upload():
         predictions = predictions.argmax(axis=1)
 
         if float(sorted_val[-1][1]) == 1.0 and float(sorted_val[-2][1]) < 0.1:
-            result = f"Result: {sorted_val[-1][0]} "
+            result = f"{sorted_val[-1]}"
         elif 0.991 < float(sorted_val[-1][1]) < 1.0:
             in2model_img = list()
             for i in range(9):
@@ -90,7 +90,7 @@ def upload():
                     most_alike.append(sorted_val[-3])
             pred_freq_arr = count_frequency(most_alike)
             sorted_freq = sorted(pred_freq_arr.items(), key=lambda item: item[1])
-            result = f"Top-3 predictions: {sorted_freq[-1][0]}   |   {sorted_freq[-2][0]}   |   {sorted_freq[-3][0]}"
+            result = f"{sorted_freq[-1]}, {sorted_freq[-2]}, {sorted_freq[-3]}"
         else:
             result = "다음의 경우에 해당됩니다. \n 1. 사진을 멀리 찍으셨습니다. \n 2. 학습한 식물이 아닌 것 같습니다."
         print(result)
