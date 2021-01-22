@@ -89,6 +89,7 @@ def upload():
                     most_alike.append(sorted_val[-2])
                     most_alike.append(sorted_val[-3])
             pred_freq_arr = count_frequency(most_alike)
+            # calculate weighted average. Failed
             sorted_freq = sorted(pred_freq_arr.items(), key=lambda item: item[1])
             result = f"{sorted_freq[-1]}, {sorted_freq[-2]}, {sorted_freq[-3]}"
         else:
